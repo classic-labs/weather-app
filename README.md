@@ -27,8 +27,8 @@ Things you may want to cover:
 
 * How to run the test suite
 
+	* bundle exec rspec spec/services/weather_service_spec.rb
+
 * Services (job queues, cache servers, search engines, etc.)
 
 	* WeatherService handles fetching and caching weather data
-
-* ...
