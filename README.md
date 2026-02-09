@@ -7,7 +7,7 @@ Things you may want to cover:
 
 * Ruby version
 
-3.2.3
+	* 3.2.3
 
 * Database
 
@@ -25,7 +25,7 @@ Things you may want to cover:
 	* Please run rails dev:cache for caching in development env
 	* No CSS framework for this project, just some simple styles
 
-* How to run the test suite
+* How to run the weather service test
 
 	* bundle exec rspec spec/services/weather_service_spec.rb
 
