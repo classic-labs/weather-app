@@ -41,6 +41,18 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
   
+  # allow net connections for tests using "external_api" meta tag
+  config.around(:each, :external_api) do |example|
+    WebMock.allow_net_connect!
+    example.run
+    WebMock.disable_net_connect!
+  end
+
+  # ensure WebMock is disabled by default for all tests, other than "external_api" above
+  config.before(:suite) do
+    WebMock.disable_net_connect!
+  end
+  
   # factory bot syntax
   config.include FactoryBot::Syntax::Methods
   
