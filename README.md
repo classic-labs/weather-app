@@ -2,30 +2,39 @@
 
 Weather App
 
-* Ruby version
+* Versions
 
-	* 3.2.3
+	* Ruby: 3.2.3
+	* Rails 7.2.2
 
 * Database
 
-	* Run rails db:migrate
+	* Create new PostgreSQL DB and run "rails db:migrate"
 
 * System dependencies
 
 	* Devise for basic user auth
-		* Use the default sign up to create user
 	* Open Weather (for retrieving weather by zip code)
 	* validates_zipcode (for validating zip code passed to Open Weather)
 
-* Configuration
+* Caching
 
-	* Please run rails dev:cache for caching in development env
+	* Please run rails dev:cache for local mem caching
+	
+* General Notes
+
+	* Use the default sign up to create user
+	* Weather is retrieved from the Dashboard
 	* No CSS framework for this project, just some simple styles
 
-* How to run the weather service test
+* Tests
 
-	* bundle exec rspec spec/services/weather_service_spec.rb
+	* all tests
+		* bundle exec rspec
+	* specific tests
+		* bundle exec rspec spec/services/weather_service_spec.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services
 
 	* WeatherService handles fetching and caching weather data
+	* It also returns basic error notifications to user
