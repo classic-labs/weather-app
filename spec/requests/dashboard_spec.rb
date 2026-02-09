@@ -1,10 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "Dashboards", type: :request do
-  describe "GET /index" do
+  let(:user) { create(:user) }
+  
+  describe "GET dashboard index" do
+    before do
+      sign_in user
+    end
+    
     it "returns http success" do
-      get "/dashboard/index"
-      expect(response).to have_http_status(:success)
+      get "/"
+      expect(response).to have_http_status(:ok)
     end
   end
 end

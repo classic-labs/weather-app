@@ -1,6 +1,6 @@
 class WeatherController < LoginsController
   def current_weather
-    weather_data = WeatherService::by_zip_code(params[:zip_code])
+    weather_data = WeatherService.by_zip_code(params[:zip_code])
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: [
