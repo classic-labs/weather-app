@@ -1,0 +1,8 @@
+/*
+ * This is a manifest file that's automatically included by application.js.
+ *
+ * (Other comments, e.g., about Sprockets directives)
+ *
+ *= require_tree .
+ *= require_self
+ */

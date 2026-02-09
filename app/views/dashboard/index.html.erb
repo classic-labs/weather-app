@@ -1,0 +1,16 @@
+<h1>Dashboard</h1>
+
+<div id="current-weather"></div>
+
+<p>
+	<%= form_with url: current_weather_path, method: :post do |form| %>
+	  <div id="form-messages"></div>
+
+	  <div>
+	    <%= form.label :zip_code, "Please enter a zip code" %>
+	    <%= form.text_field :zip_code %>
+	  </div>
+
+	  <%= form.submit "Get Current Weather" %>
+	<% end %>
+</p>
