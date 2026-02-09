@@ -1,6 +1,8 @@
-<%# locals: (error: nil) %>
+<%# locals: (weather_data: nil) %>
 <div id="form-messages">
-	<% if error.present? %>
-		<p class="error"><%= error %></p>
+	<% if weather_data.blank? %>
+		<p class="error">Something went wrong. Please try again.</p>
+	<% elsif weather_data[:error].present? %>
+		<p class="error"><%= weather_data[:error] %></p>
 	<% end %>
 </div>
