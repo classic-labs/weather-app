@@ -1,6 +1,6 @@
 <%# locals: (weather_data: nil) %>
 <div id="current-weather">
-	<% if weather_data.present? %>
+	<% if weather_data[:data].present? %>
 		<div>Weather for: <%= weather_data[:data].name %></div>
 		<div>Date: <%= format_datetime(weather_data[:data].dt) %></div>
 		<div>Humidity: <%= weather_data[:data].main.humidity %></div>

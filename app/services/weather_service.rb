@@ -17,6 +17,6 @@ class WeatherService
     end
   rescue StandardError => e
     Rails.logger.error("Error fetching weather for zip code: #{zip_code}. Message: #{e.message}")
-    nil
+    { data: nil, error: e.message }
   end
 end
