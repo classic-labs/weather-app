@@ -19,9 +19,6 @@ a {
 }
 
 .error { color: #f00; }
-#form-messages {
-	p { color: #f00; }
-}
 
 header.primary,
 footer.primary { padding: 15px 30px; }
@@ -49,6 +46,4 @@ header.primary {
 
 #content { padding: 30px;}
 
-footer.primary {
-	background-color: #e8e8e8;
-}
+footer.primary { background-color: #e8e8e8; }

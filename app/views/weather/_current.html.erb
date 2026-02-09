@@ -1,9 +1,11 @@
-<%# locals: (weather_data:) %>
+<%# locals: (weather_data: nil) %>
 <div id="current-weather">
-	<div>Weather for: <%= weather_data.name %></div>
-	<div>Date: <%= format_datetime(weather_data.dt) %></div>
-	<div>Humidity: <%= weather_data.main.humidity %></div>
-	<div>Pressure: <%= weather_data.main.pressure %></div>
-	<div>Max temp: <%= weather_data.main.temp_max_f %></div>
-	<div>Min temp: <%= weather_data.main.temp_min_f %></div>
+	<% if weather_data.present? %>
+		<div>Weather for: <%= weather_data.name %></div>
+		<div>Date: <%= format_datetime(weather_data.dt) %></div>
+		<div>Humidity: <%= weather_data.main.humidity %></div>
+		<div>Pressure: <%= weather_data.main.pressure %></div>
+		<div>Max temp: <%= weather_data.main.temp_max_f %></div>
+		<div>Min temp: <%= weather_data.main.temp_min_f %></div>
+	<% end %>
 </div>

@@ -6,7 +6,7 @@ class WeatherService
   
   def self.by_zip_code(zip_code)
     unless ValidatesZipcode.valid?(zip_code, 'US')
-      raise StandardError, "Zip code is invalid"
+      return { error: "Zip code is invalid" }
     end
     
     begin
@@ -15,7 +15,7 @@ class WeatherService
 
       if cached_data
         # data is cached, return it and indicate it's from the cache
-        { data: cached_data, cached: true }
+        { data: cached_data, cached: true, error: "Weather is from cache" }
       else
         # data is not cached, fetch it, cache it and indicate it's not from the cache
         client = OpenWeather::Client.new(api_key: ENV['OPEN_WEATHER_API_KEY'])
@@ -30,7 +30,7 @@ class WeatherService
       raise UnauthorizedError, "Not authorized to access the weather API. Error: #{e.message}"
     rescue Faraday::ClientError => e
       raise ApiError, "An API client error occurred. Error: #{e.message}"
-    rescue Faraday::ServerError => e
+    rescue Faraday::ServerError
       raise ServerError, "The external API is currently unavailable"
     end
   end

@@ -14,6 +14,7 @@ RSpec.describe WeatherService, type: :service do
     before do
       # Disable real network connections and stub the request
       WebMock.disable_net_connect!(allow_localhost: true)
+      
       stub_request(:get, api_url)
       .with(headers: { 'Accept' => '*/*', 'User-Agent' => 'Ruby' })
       .to_return(status: 200, body: stubbed_response, headers: {})
