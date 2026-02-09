@@ -31,9 +31,9 @@ RSpec.describe WeatherService, type: :service do
     
     it "stubs the weather request by zip code" do
       # call WeatherService to compare expected data with stubbed data
-      #weather_data = service.by_zip_code(zip_code)
-      #expect(weather_data["data"]["name"]).to eq("Muskegon")
-      #expect(WebMock).to have_requested(:get, api_url).once
+      weather_data = service.by_zip_code(zip_code)
+      expect(weather_data["data"]["name"]).to eq("Muskegon")
+      expect(WebMock).to have_requested(:get, api_url).once
     end
   end
 end
