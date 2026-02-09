@@ -31,6 +31,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem 'factory_bot_rails'
+  gem "brakeman", require: false
   gem "letter_opener"
 end
 
