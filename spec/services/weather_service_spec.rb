@@ -11,7 +11,7 @@ RSpec.describe WeatherService, type: :service do
   end
   let(:headers) { { 'Content-Type' => 'application/json' } }
   
-  describe '#by_zip_code' do
+  describe '.by_zip_code' do
     it "stubs the weather request by zip code", :external_api do
       # stub the request and return a predefined response, e.g. name = Muskegon
       stub_request(:get, api_url)
